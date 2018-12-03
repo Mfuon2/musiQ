@@ -26,7 +26,7 @@ Material Design Music Player
 
 # Donate
 Paypal donation email-
-namandwivedi14@gmail.com
+mfolee@gmail.com
 
 
 ## License
