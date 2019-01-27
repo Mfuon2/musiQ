@@ -3,14 +3,13 @@ apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "mfuon.musiQ"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 20
-        versionName "1.6"
+        versionName "2.0"
         //renderscript support mode is not supported for 21+ with gradle version 2.0
         renderscriptTargetApi 20
         renderscriptSupportModeEnabled true
@@ -26,7 +25,7 @@ android {
         }
         debug {
             ext.enableCrashlytics = false
-            versionNameSuffix "-debug"
+            versionNameSuffix ""
             minifyEnabled false
             applicationIdSuffix '.dev'
             manifestPlaceholders = [ appNameSuffix:"MusiQ"]

@@ -57,11 +57,12 @@ public class Helpers {
 
     public static class AboutDialog extends DialogFragment {
 
-        String urlgooglelus = "https://plus.google.com/u/0/+NamanDwivedi14";
-        String urlcommunity = "https://plus.google.com/communities/111029425713454201429";
-        String urltwitter = "https://twitter.com/naman1405";
-        String urlgithub = "https://github.com/naman14";
-        String urlsource = "https://github.com/naman14/Timber/issues";
+        String urlgooglelus = "https://plus.google.com/u/0/113178629323020312101";
+        String urlcommunity = "https://plus.google.com/communities/112882647409450521936";
+        String urltwitter = "https://twitter.com/mfuon";
+        String urlgithub = "https://github.com/mfuon2";
+        String urlsource = "https://bitbucket.org/mfuon/musiq/src/master/";
+        String urlslack = "https://ryztek.slack.com/messages/CFRADAB63/";
 
         public AboutDialog() {
         }
@@ -80,6 +81,7 @@ public class Helpers {
             TextView github = aboutBodyView.findViewById(R.id.github);
             TextView source = aboutBodyView.findViewById(R.id.source);
             TextView community = aboutBodyView.findViewById(R.id.feature_request);
+            final TextView slack = aboutBodyView.findViewById(R.id.slack);
 
             TextView dismiss = aboutBodyView.findViewById(R.id.dismiss_dialog);
             dismiss.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +93,7 @@ public class Helpers {
             googleplus.setPaintFlags(googleplus.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             twitter.setPaintFlags(twitter.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             github.setPaintFlags(github.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            slack.setPaintFlags(slack.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
             googleplus.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -119,6 +122,15 @@ public class Helpers {
                 }
 
             });
+
+            slack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(urlslack));
+                    startActivity(i);
+                }
+            });
             source.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -139,7 +151,7 @@ public class Helpers {
                 PackageInfo pInfo = getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0);
                 String version = pInfo.versionName;
                 int versionCode = pInfo.versionCode;
-                appversion.setText("Timber " + version);
+                appversion.setText("MusiQ " + version);
             } catch (PackageManager.NameNotFoundException e) {
                 e.printStackTrace();
             }

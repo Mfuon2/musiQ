@@ -70,7 +70,7 @@ public class SubStyleSelectorFragment extends Fragment {
         styleImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (getArguments().getInt(ARG_PAGE_NUMBER) >= 4) {
+                if (getArguments().getInt(ARG_PAGE_NUMBER) >= 7) {
                     if (isUnlocked()) {
                         setPreferences();
                     } else {
@@ -83,10 +83,10 @@ public class SubStyleSelectorFragment extends Fragment {
 
         switch (getArguments().getInt(ARG_PAGE_NUMBER)) {
             case 0:
-                styleImage.setImageResource(R.drawable.timber_1_nowplaying_x);
+                styleImage.setImageResource(R.drawable.timber_5_nowplaying_x);
                 break;
             case 1:
-                styleImage.setImageResource(R.drawable.timber_2_nowplaying_x);
+                styleImage.setImageResource(R.drawable.timber_6_nowplaying_x);
                 break;
             case 2:
                 styleImage.setImageResource(R.drawable.timber_3_nowplaying_x);
@@ -95,10 +95,10 @@ public class SubStyleSelectorFragment extends Fragment {
                 styleImage.setImageResource(R.drawable.timber_4_nowplaying_x);
                 break;
             case 4:
-                styleImage.setImageResource(R.drawable.timber_5_nowplaying_x);
+                styleImage.setImageResource(R.drawable.timber_1_nowplaying_x);
                 break;
             case 5:
-                styleImage.setImageResource(R.drawable.timber_6_nowplaying_x);
+                styleImage.setImageResource(R.drawable.timber_2_nowplaying_x);
                 break;
         }
 
@@ -121,7 +121,7 @@ public class SubStyleSelectorFragment extends Fragment {
     }
 
     private void updateLockedStatus() {
-        if (getArguments().getInt(ARG_PAGE_NUMBER) >= 4 && !isUnlocked()) {
+        if (getArguments().getInt(ARG_PAGE_NUMBER) >= 7 && !isUnlocked()) {
             imgLock.setVisibility(View.VISIBLE);
             foreground.setVisibility(View.VISIBLE);
         }
@@ -156,7 +156,7 @@ public class SubStyleSelectorFragment extends Fragment {
     }
 
     public void setCurrentStyle() {
-        String fragmentID = preferences.getString(Constants.NOWPLAYING_FRAGMENT_ID, Constants.TIMBER3);
+        String fragmentID = preferences.getString(Constants.NOWPLAYING_FRAGMENT_ID, Constants.TIMBER5);
 
         if (getArguments().getInt(ARG_PAGE_NUMBER) == NavigationUtils.getIntForCurrentNowplaying(fragmentID)) {
             currentStyle.setVisibility(View.VISIBLE);
