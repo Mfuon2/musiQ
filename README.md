@@ -2,9 +2,7 @@
 
 Material Design Music Player
 
-
-
-## Features
+# Features
 - Material design
 - Browse Songs, Albums, Artists
 - Create and edit playlists
@@ -19,17 +17,17 @@ Material Design Music Player
 - Lyrics support
 - Chromecast support
 
-## Changelog
+# Changelog
 
-## Credits
-
+# Credits
+> Mfuon Leonard - @mfuon https://twitter.com/mfuon
 
 # Donate
 Paypal donation email-
 mfolee@gmail.com
 
 
-## License
+# License
 
 >(c) 2015 Mfuon Leonard
 
